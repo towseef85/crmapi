@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Infrastructure.Dtos.VendorPriceDto;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -18,5 +19,6 @@ namespace Infrastructure.Dtos.VendorDto
         public string? LocationUrl { get; set; }
         public string LeadSource { get; set; }
         public string PickupAddress { get; set; }
+        public ICollection<PostVendorPriceDto> vendorPrice { get; set; }
     }
 }

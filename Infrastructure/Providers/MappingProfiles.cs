@@ -26,8 +26,10 @@ namespace Infrastructure.Providers
             CreateMap<PostPriceDto, Price>();
             CreateMap<Price, GetPriceDto>();
 
-            CreateMap<PostVendorDto, Vendor>();
-            CreateMap<Vendor, GetVendorDto>();
+            CreateMap<PostVendorDto, Vendor>()
+                .ForMember(x=>x.VendorPrices, s=>s.MapFrom(x=>x.vendorPrice));
+            CreateMap<Vendor, GetVendorDto>()
+                .ForMember(x=>x.VendorPrices, s=>s.MapFrom(x=>x.VendorPrices.Select(x=>x.Prices)));
 
             CreateMap<PostDriverDto, Driver>();
             CreateMap<Driver, GetDriverDto>();

@@ -32,7 +32,7 @@ namespace Application.VendorBL
             }
             public async Task<ServiceStatus<List<GetVendorDto>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var result = await _context.Vendors.ToArrayAsync(cancellationToken);
+                var result = await _context.Vendors.Include(x=>x.VendorPrices).ThenInclude(x=>x.Prices).ToListAsync(cancellationToken);
                 if (result != null)
                 {
                     var list = _mapper.Map<List<GetVendorDto>>(result);

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Infrastructure.Dtos.PriceDto;
 
 namespace Infrastructure.Dtos.VendorDto
 {
@@ -18,5 +13,6 @@ namespace Infrastructure.Dtos.VendorDto
         public string? LocationUrl { get; set; }
         public string LeadSource { get; set; }
         public string PickupAddress { get; set; }
+        public ICollection<GetPriceDto> VendorPrices { get; set; }
     }
 }

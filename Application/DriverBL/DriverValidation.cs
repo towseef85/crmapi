@@ -15,8 +15,8 @@ namespace Application.DriverBL
 
             RuleFor(x => x.Name).NotEmpty();
             RuleFor(x => x.MobileNo).NotEmpty();
-            RuleFor(x => x.WorkType).Must((x => x == "Full Time" || x == "Part Time"));
-            RuleFor(x => x.Status).Must((x => x == "Active" || x == "Inactive"));
+            RuleFor(x => x.WorkType).Must((x => x == "FullTime" || x == "PartTime"));
+            RuleFor(x => x.Status).Must((x => x == "Active" || x == "InActive"));
         }
     }
 
