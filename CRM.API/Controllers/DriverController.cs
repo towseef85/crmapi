@@ -35,7 +35,7 @@ namespace CRM.API.Controllers
             return HandleResult(await Mediator.Send(new Create.Command { Driver = driver }));
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PostDriverDto))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Update(PostDriverDto driver)

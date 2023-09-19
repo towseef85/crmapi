@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Domain.Drivers;
+using Domain.Orders;
 using Domain.Prices;
 using Domain.Vendors;
 using Infrastructure.Dtos.DriverDto;
@@ -21,6 +22,11 @@ namespace Infrastructure.Providers
         {
 
             CreateMap<PostVendorPriceDto, VendorPrice>();
+            CreateMap<PostOrderDto, Order>();
+            CreateMap<Order, GetOrderDto>()
+                .ForMember(x=>x.Driver, y=>y.MapFrom(x=>x.Driver))
+                .ForMember(x => x.Vendor, y => y.MapFrom(x => x.Vendor));
+
             CreateMap<VendorPrice, GetVendorPriceDto>();
 
             CreateMap<PostPriceDto, Price>();
@@ -31,6 +37,7 @@ namespace Infrastructure.Providers
             CreateMap<Vendor, GetVendorDto>()
                 .ForMember(x=>x.VendorPrices, s=>s.MapFrom(x=>x.VendorPrices.Select(x=>x.Prices)));
 
+            CreateMap<Vendor, GetVendorShortDto>();
             CreateMap<PostDriverDto, Driver>();
             CreateMap<Driver, GetDriverDto>();
         }

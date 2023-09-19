@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using Domain.Orders;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -14,6 +15,7 @@ namespace Domain.Drivers
         public string MobileNo { get; set; }
         public string WorkType { get; set; }
         public string Status { get; set; }
-        //public virtual ICollection<Order> Orders { get; set; }
+        public string? TimeSlot { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }

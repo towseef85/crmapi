@@ -6,6 +6,7 @@ using System.Data;
 using Domain.Drivers;
 using Domain.Vendors;
 using Domain.Prices;
+using Domain.Orders;
 
 namespace Persistence.DataContexts
 {
@@ -19,7 +20,9 @@ namespace Persistence.DataContexts
         public DbSet<Vendor> Vendors { get; set; }
         public DbSet<Price> Prices { get; set; }
         public DbSet<VendorPrice> VendorPrices { get; set; }
-
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderStatus> OrderStatuses { get; set; }
+        public DbSet<OrderHistory> OrderHistories { get; set; }
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
 
@@ -69,8 +72,24 @@ namespace Persistence.DataContexts
                 .HasOne(vp => vp.Vendors)
                 .WithMany(v => v.VendorPrices)
                 .HasForeignKey(vp => vp.VendorId);
+            modelBuilder.Entity<Order>()
+                .HasOne(x => x.Driver)
+                .WithMany(x => x.Orders)
+                .HasForeignKey(x => x.DriverId);
+            modelBuilder.Entity<Order>()
+                  .HasOne(x => x.Vendor)
+                .WithMany(x => x.Orders)
+                .HasForeignKey(x => x.VendorId);
+            modelBuilder.Entity<OrderHistory>()
+                .HasOne(x => x.Order)
+                .WithMany(x => x.OrderHistory)
+                .HasForeignKey(x => x.OrderId);
+            modelBuilder.Entity<OrderHistory>()
+                .HasOne(x => x.OrderStatus)
+                .WithMany(x => x.OrderHistory)
+                .HasForeignKey(x => x.StatusId);
 
-//-----------
+            //-----------
 
 
 

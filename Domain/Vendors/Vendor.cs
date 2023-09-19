@@ -1,4 +1,5 @@
 ﻿using Domain.Common;
+using Domain.Orders;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -21,6 +22,6 @@ namespace Domain.Vendors
         public bool IsTrailDone { get; set;}
 
         public virtual ICollection<VendorPrice> VendorPrices { get; set; }
-        //public virtual ICollection<Order> Orders { get; set; }
+        public virtual ICollection<Order> Orders { get; set; }
     }
 }
