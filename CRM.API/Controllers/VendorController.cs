@@ -50,5 +50,11 @@ namespace CRM.API.Controllers
         {
             return HandleResult(await Mediator.Send(new Delete.Command { Id = Id }));
         }
+
+        [HttpGet("GetVendorPrices/{Id}")]
+        public async Task<IActionResult> GetVendorPrices(Guid Id)
+        {
+            return HandleResult(await Mediator.Send(new GetPrices.Query { Id = Id }));
+        }
     }
 }

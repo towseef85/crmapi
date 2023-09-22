@@ -2,9 +2,11 @@ using Application;
 using Application.Driver;
 using FluentValidation.AspNetCore;
 using Infrastructure;
+using Infrastructure.Providers;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Persistence.DataContexts;
+using System.ComponentModel;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddInfrastructure();
 builder.Services.AddApplication();
 builder.Services.AddLogging();
+
 builder.Services.AddDbContext<ApplicationDbContext>(opt =>
 {
     opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
@@ -41,7 +44,14 @@ builder.Services.AddControllers().AddFluentValidation(config =>
 {
     config.RegisterValidatorsFromAssemblyContaining<Create>();
 });
-
+builder.Services.AddControllers(config =>
+{
+    // config settings
+}).AddJsonOptions(x =>
+{
+    // use the above date time converter
+    x.JsonSerializerOptions.Converters.Add(new JsonDateTimeConverter());
+});
 
 var app = builder.Build();
 

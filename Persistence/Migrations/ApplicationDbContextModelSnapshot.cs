@@ -91,11 +91,17 @@ namespace Persistence.Migrations
                     b.Property<Guid>("DriverId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<float?>("ExtraCharges")
+                        .HasColumnType("real");
+
                     b.Property<string>("PickupLocation")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<Guid>("PriceId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Remarks")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");

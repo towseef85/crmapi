@@ -22,7 +22,9 @@ namespace Domain.Orders
         public virtual Vendor Vendor { get; set; }
         public virtual Driver Driver { get; set; }
         public virtual Price Price { get; set; }
-        public ICollection<OrderHistory> OrderHistory { get; set; }
+        public  ICollection<OrderHistory> OrderHistory { get; set; }
+        public string? Remarks { get; set; }
+        public float? ExtraCharges { get; set; }
 
     }
 

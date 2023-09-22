@@ -1,4 +1,5 @@
-﻿using Infrastructure.Dtos.PriceDto;
+﻿
+using Infrastructure.Dtos.PriceDto;
 
 namespace Infrastructure.Dtos.VendorDto
 {
@@ -14,5 +15,6 @@ namespace Infrastructure.Dtos.VendorDto
         public string LeadSource { get; set; }
         public string PickupAddress { get; set; }
         public ICollection<GetPriceDto> VendorPrices { get; set; }
+
     }
 }

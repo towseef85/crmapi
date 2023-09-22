@@ -2,11 +2,14 @@
 using Domain.Prices;
 using Domain.Vendors;
 using Infrastructure.Dtos.DriverDto;
+using Infrastructure.Dtos.OrderHistoryDto;
 using Infrastructure.Dtos.VendorDto;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Infrastructure.Dtos.OrderDto
@@ -19,12 +22,14 @@ namespace Infrastructure.Dtos.OrderDto
         public Guid PriceId { get; set; }
         public Guid StatusId { get; set; }
         public string? PickupLocation { get; set; }
-        public DeliveryType DeliveryType { get; set; }
+        public int DeliveryType { get; set; }
         public float? CODCharges { get; set; }
+        public string? Remarks { get; set; }
+        public float? ExtraCharges { get; set; }
         public DateTime DeliveryDate { get; set; }
         public GetDriverDto Driver { get; set; }
         public GetVendorShortDto Vendor { get; set; }
+        public ICollection<GetOrderHistoryDto> OrderHistory { get; set; }
     }
 
-    public enum DeliveryType { COD, Online }
 }

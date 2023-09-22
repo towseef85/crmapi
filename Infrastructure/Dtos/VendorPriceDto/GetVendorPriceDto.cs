@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Infrastructure.Dtos.PriceDto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,6 @@ namespace Infrastructure.Dtos.VendorPriceDto
         public Guid Id { get; set; }
         public Guid VendorId { get; set; }
         public Guid PriceId { get; set; }
+        public GetPriceDto Price { get; set; }
     }
 }

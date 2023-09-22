@@ -5,6 +5,7 @@ using Domain.Prices;
 using Domain.Vendors;
 using Infrastructure.Dtos.DriverDto;
 using Infrastructure.Dtos.OrderDto;
+using Infrastructure.Dtos.OrderHistoryDto;
 using Infrastructure.Dtos.PriceDto;
 using Infrastructure.Dtos.VendorDto;
 using Infrastructure.Dtos.VendorPriceDto;
@@ -22,24 +23,27 @@ namespace Infrastructure.Providers
         {
 
             CreateMap<PostVendorPriceDto, VendorPrice>();
-            CreateMap<PostOrderDto, Order>();
-            CreateMap<Order, GetOrderDto>()
-                .ForMember(x=>x.Driver, y=>y.MapFrom(x=>x.Driver))
-                .ForMember(x => x.Vendor, y => y.MapFrom(x => x.Vendor));
-
-            CreateMap<VendorPrice, GetVendorPriceDto>();
-
+            CreateMap<VendorPrice, GetVendorPriceDto>()
+                .ForMember(x=>x.Price, y=>y.MapFrom(x=>x.Prices));
             CreateMap<PostPriceDto, Price>();
             CreateMap<Price, GetPriceDto>();
-
             CreateMap<PostVendorDto, Vendor>()
                 .ForMember(x=>x.VendorPrices, s=>s.MapFrom(x=>x.vendorPrice));
             CreateMap<Vendor, GetVendorDto>()
-                .ForMember(x=>x.VendorPrices, s=>s.MapFrom(x=>x.VendorPrices.Select(x=>x.Prices)));
-
+                .ForMember(x => x.VendorPrices, s => s.MapFrom(x => x.VendorPrices.Select(x => x.Prices)));
             CreateMap<Vendor, GetVendorShortDto>();
             CreateMap<PostDriverDto, Driver>();
             CreateMap<Driver, GetDriverDto>();
+            CreateMap<PostOrderDto, Order>();
+            CreateMap<OrderStatus, GetOrderStatusShortDto>();
+            CreateMap<Order, GetOrderDto>()
+                .ForMember(x => x.Driver, y => y.MapFrom(x => x.Driver))
+                .ForMember(x => x.Vendor, y => y.MapFrom(x => x.Vendor))
+                .ForMember(x => x.OrderHistory, y => y.MapFrom(x => x.OrderHistory));
+                
+            CreateMap<OrderHistory, GetOrderHistoryDto>();
+            CreateMap<PostOrderHistoryDto, OrderHistory>();
+         
         }
     }
 }

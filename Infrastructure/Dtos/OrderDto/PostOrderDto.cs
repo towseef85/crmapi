@@ -16,8 +16,10 @@ namespace Infrastructure.Dtos.OrderDto
         public Guid DriverId { get; set; }
         public Guid PriceId { get; set; }
         public string? PickupLocation { get; set; }
-        public DeliveryType DeliveryType { get; set; }
-        public float? CODCharges { get; set; }
+        public string? Remarks { get; set; }
+        public float? ExtraCharges { get; set; }
+        public int DeliveryType { get; set; }
+        public float? CODCharges { get; set; } = 0;
         public DateTime DeliveryDate { get; set; }
     }
 

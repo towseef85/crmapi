@@ -59,7 +59,7 @@ namespace Application.OrderBL
                             OrderId = orderId,
                             StatusId = getStatus.Id,
                             Remarks = "Order Created",
-                            UpdatedDate = DateTime.Now
+                            StatusUpdateDate = DateTime.Now.Date
                         };
                         _context.OrderHistories.Add(orderHistory);
                         await _context.SaveChangesAsync(cancellationToken);
