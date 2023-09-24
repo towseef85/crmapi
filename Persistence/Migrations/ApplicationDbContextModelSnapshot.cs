@@ -94,6 +94,16 @@ namespace Persistence.Migrations
                     b.Property<float?>("ExtraCharges")
                         .HasColumnType("real");
 
+                    b.Property<bool>("IsPaid")
+                        .HasColumnType("bit");
+
+                    b.Property<float?>("OrderAmount")
+                        .HasColumnType("real");
+
+                    b.Property<string>("OrderNumber")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PickupLocation")
                         .HasColumnType("nvarchar(max)");
 

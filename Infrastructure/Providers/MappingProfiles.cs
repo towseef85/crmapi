@@ -39,9 +39,12 @@ namespace Infrastructure.Providers
             CreateMap<Order, GetOrderDto>()
                 .ForMember(x => x.Driver, y => y.MapFrom(x => x.Driver))
                 .ForMember(x => x.Vendor, y => y.MapFrom(x => x.Vendor))
-                .ForMember(x => x.OrderHistory, y => y.MapFrom(x => x.OrderHistory));
+                .ForMember(x => x.OrderHistory, y => y.MapFrom(x => x.OrderHistory))
+                .ForMember(x=>x.Prices, s=>s.MapFrom(x=>x.Price))
+                .ForMember(x=>x.Status, s=>s.MapFrom(x=>x.OrderHistory.Select(x=>x.OrderStatus)));
                 
-            CreateMap<OrderHistory, GetOrderHistoryDto>();
+            CreateMap<OrderHistory, GetOrderHistoryDto>()
+                .ForMember(x=>x.OrderStatus, y=>y.MapFrom(x=>x.OrderStatus));
             CreateMap<PostOrderHistoryDto, OrderHistory>();
          
         }

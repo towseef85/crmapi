@@ -13,6 +13,7 @@ namespace Domain.Orders
     public class Order : BaseEntity
     {
         public Guid VendorId { get; set; }
+        public string OrderNumber { get; set; }
         public Guid DriverId { get; set; }
         public Guid PriceId { get; set; }
         public string? PickupLocation { get; set; }
@@ -22,9 +23,11 @@ namespace Domain.Orders
         public virtual Vendor Vendor { get; set; }
         public virtual Driver Driver { get; set; }
         public virtual Price Price { get; set; }
+        public float? OrderAmount { get; set; }
         public  ICollection<OrderHistory> OrderHistory { get; set; }
         public string? Remarks { get; set; }
         public float? ExtraCharges { get; set; }
+        public bool IsPaid { get; set; }=false;
 
     }
 

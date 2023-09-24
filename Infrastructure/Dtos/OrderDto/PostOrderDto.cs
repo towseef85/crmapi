@@ -12,6 +12,7 @@ namespace Infrastructure.Dtos.OrderDto
     public class PostOrderDto
     {
         public Guid Id { get; set; }
+        public string? OrderNumber { get; set; }
         public Guid VendorId { get; set; }
         public Guid DriverId { get; set; }
         public Guid PriceId { get; set; }
@@ -21,6 +22,8 @@ namespace Infrastructure.Dtos.OrderDto
         public int DeliveryType { get; set; }
         public float? CODCharges { get; set; } = 0;
         public DateTime DeliveryDate { get; set; }
+        public float? OrderAmount { get; set; }
+        public bool IsPaid { get; set; } = false;
     }
 
 }

@@ -26,7 +26,7 @@ namespace Application.OrderBL
             }
             public async Task<ServiceStatus<List<GetOrderDto>>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var result = await _context.Orders.Include(x=>x.Driver).Include(x=>x.Vendor).Include(x=>x.OrderHistory).ThenInclude(x=>x.OrderStatus).ToListAsync(cancellationToken);
+                var result = await _context.Orders.Include(x=>x.Driver).Include(x=>x.Vendor).Include(x=>x.OrderHistory).ThenInclude(x=>x.OrderStatus).OrderBy(x=>x.CreatedDate).ToListAsync(cancellationToken);
                 if (result != null)
                 {
                     var list = _mapper.Map<List<GetOrderDto>>(result);

@@ -32,7 +32,7 @@ namespace Application.OrderBL
             }
             public async Task<ServiceStatus<GetOrderDto>> Handle(Query request, CancellationToken cancellationToken)
             {
-                var result = await _context.Orders.Where(x => x.Id == request.Id).Include(x=>x.Driver).Include(x=>x.Vendor).FirstOrDefaultAsync(cancellationToken);
+                var result = await _context.Orders.Where(x => x.Id == request.Id).Include(x=>x.Driver).Include(x=>x.Vendor).ThenInclude(x=>x.VendorPrices).ThenInclude(x=>x.Prices).Include(x=>x.OrderHistory).ThenInclude(x=>x.OrderStatus).FirstOrDefaultAsync(cancellationToken);
                 if (result != null)
                 {
                     var list = _mapper.Map<GetOrderDto>(result);

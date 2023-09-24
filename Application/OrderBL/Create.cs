@@ -46,6 +46,8 @@ namespace Application.OrderBL
                     //request.Order.CreatedUserId = new Guid(_httpContextAccessor.HttpContext?.User.FindFirstValue(ClaimTypes.NameIdentifier));
                     Guid orderId = Guid.NewGuid();
                     request.Order.Id = orderId;
+                    var type = request.Order.DeliveryType == 1 ? "C" : "O";
+                    request.Order.OrderNumber = $"{type}J{DateTime.Now.ToString("MMddyyyyHHmmss")}{new Random().Next()}";
 
                     _context.Orders.Add(_mapper.Map<Domain.Orders.Order>(request.Order));
                     var result = await _context.SaveChangesAsync(cancellationToken) > 0;
