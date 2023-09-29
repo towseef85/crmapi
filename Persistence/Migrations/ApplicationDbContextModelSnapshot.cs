@@ -64,6 +64,92 @@ namespace Persistence.Migrations
                     b.ToTable("Drivers");
                 });
 
+            modelBuilder.Entity("Domain.Drivers.DriverPaymentDetails", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<float>("CODAmount")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("DriverPaymentHeadId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<float>("OrderAmount")
+                        .HasColumnType("real");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<float>("Total")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DriverPaymentHeadId");
+
+                    b.ToTable("DriverPaymentDetails");
+                });
+
+            modelBuilder.Entity("Domain.Drivers.DriverPaymentHead", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("Balance")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<Guid>("DriverId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<decimal>("PaidAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("PaymentStatus")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PaymentType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Remarks")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<decimal>("TotalAmount")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DriverId");
+
+                    b.ToTable("DriverPaymentHeads");
+                });
+
             modelBuilder.Entity("Domain.Orders.Order", b =>
                 {
                     b.Property<Guid>("Id")
@@ -176,7 +262,6 @@ namespace Persistence.Migrations
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ArbName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CreatedDate")
@@ -204,6 +289,16 @@ namespace Persistence.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("OrderStatuses");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = new Guid("bd3be650-b445-4e70-8a4d-317271767c97"),
+                            ArbName = "Created",
+                            Deleted = false,
+                            EngName = "Created",
+                            IsActive = true
+                        });
                 });
 
             modelBuilder.Entity("Domain.Prices.Price", b =>
@@ -243,6 +338,9 @@ namespace Persistence.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("CRNumber")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -289,6 +387,9 @@ namespace Persistence.Migrations
                     b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("VATNumber")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Vendors");
@@ -322,6 +423,28 @@ namespace Persistence.Migrations
                     b.HasIndex("PriceId");
 
                     b.ToTable("VendorPrices");
+                });
+
+            modelBuilder.Entity("Domain.Drivers.DriverPaymentDetails", b =>
+                {
+                    b.HasOne("Domain.Drivers.DriverPaymentHead", "DriverPaymentHead")
+                        .WithMany("DriverPaymentDetails")
+                        .HasForeignKey("DriverPaymentHeadId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("DriverPaymentHead");
+                });
+
+            modelBuilder.Entity("Domain.Drivers.DriverPaymentHead", b =>
+                {
+                    b.HasOne("Domain.Drivers.Driver", "Driver")
+                        .WithMany("DriverPayments")
+                        .HasForeignKey("DriverId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Driver");
                 });
 
             modelBuilder.Entity("Domain.Orders.Order", b =>
@@ -391,7 +514,14 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Drivers.Driver", b =>
                 {
+                    b.Navigation("DriverPayments");
+
                     b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("Domain.Drivers.DriverPaymentHead", b =>
+                {
+                    b.Navigation("DriverPaymentDetails");
                 });
 
             modelBuilder.Entity("Domain.Orders.Order", b =>

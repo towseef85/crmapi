@@ -17,6 +17,8 @@ namespace Infrastructure.Dtos.VendorDto
         public string? OfficeNumber { get; set; }
         public string EmailId { get; set; }
         public string? LocationUrl { get; set; }
+        public string? CRNumber { get; set; }
+        public string? VATNumber { get; set; }
         public string LeadSource { get; set; }
         public string PickupAddress { get; set; }
         public ICollection<PostVendorPriceDto> vendorPrice { get; set; }

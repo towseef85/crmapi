@@ -4,6 +4,7 @@ using Domain.Orders;
 using Domain.Prices;
 using Domain.Vendors;
 using Infrastructure.Dtos.DriverDto;
+using Infrastructure.Dtos.DriverpaymentDto;
 using Infrastructure.Dtos.OrderDto;
 using Infrastructure.Dtos.OrderHistoryDto;
 using Infrastructure.Dtos.PriceDto;
@@ -36,6 +37,7 @@ namespace Infrastructure.Providers
             CreateMap<Driver, GetDriverDto>();
             CreateMap<PostOrderDto, Order>();
             CreateMap<OrderStatus, GetOrderStatusShortDto>();
+            CreateMap<PostOrderStatusDto, OrderStatus>();
             CreateMap<Order, GetOrderDto>()
                 .ForMember(x => x.Driver, y => y.MapFrom(x => x.Driver))
                 .ForMember(x => x.Vendor, y => y.MapFrom(x => x.Vendor))
@@ -46,6 +48,10 @@ namespace Infrastructure.Providers
             CreateMap<OrderHistory, GetOrderHistoryDto>()
                 .ForMember(x=>x.OrderStatus, y=>y.MapFrom(x=>x.OrderStatus));
             CreateMap<PostOrderHistoryDto, OrderHistory>();
+            CreateMap<PostDriverPaymentHeadDto, DriverPaymentHead>()
+                .ForMember(x=>x.DriverPaymentDetails, y=>y.MapFrom(x=>x.PaymentDetails));
+            CreateMap<PostDriverPaymentDetailsDto, DriverPaymentDetails>();
+
          
         }
     }

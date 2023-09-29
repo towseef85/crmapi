@@ -7,6 +7,7 @@ using Domain.Drivers;
 using Domain.Vendors;
 using Domain.Prices;
 using Domain.Orders;
+using Microsoft.EntityFrameworkCore.Internal;
 
 namespace Persistence.DataContexts
 {
@@ -23,6 +24,8 @@ namespace Persistence.DataContexts
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderStatus> OrderStatuses { get; set; }
         public DbSet<OrderHistory> OrderHistories { get; set; }
+        public DbSet<DriverPaymentHead> DriverPaymentHeads { get; set; }
+        public DbSet<DriverPaymentDetails> DriverPaymentDetails { get; set; }
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
 
@@ -65,6 +68,8 @@ namespace Persistence.DataContexts
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+       
+
             modelBuilder.Entity<VendorPrice>()
             .HasKey(vp => new { vp.VendorId, vp.PriceId });
 
@@ -89,6 +94,15 @@ namespace Persistence.DataContexts
                 .WithMany(x => x.OrderHistory)
                 .HasForeignKey(x => x.StatusId);
 
+            modelBuilder.Entity<DriverPaymentDetails>()
+                 .HasOne(x => x.DriverPaymentHead)
+                 .WithMany(x => x.DriverPaymentDetails)
+                 .HasForeignKey(x => x.DriverPaymentHeadId);
+            modelBuilder.Entity<DriverPaymentHead>()
+                .HasOne(x => x.Driver)
+                .WithMany(x => x.DriverPayments)
+                .HasForeignKey(x => x.DriverId);
+
             //-----------
 
 
@@ -105,6 +119,7 @@ namespace Persistence.DataContexts
             //  .HasForeignKey(x => x.DriverId);
 
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Entity<OrderStatus>().HasData(new OrderStatus { Id=Guid.NewGuid(), EngName="Created", ArbName="Created",IsActive=true });
         }
 
         public async Task<IDbContextTransaction> BeginTransactionAsync()

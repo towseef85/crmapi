@@ -18,8 +18,6 @@ namespace CRM.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PostOrderHistoryDto))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-
-
         public async Task<IActionResult> Create(PostOrderHistoryDto OrderHistory)
         {
             return HandleResult(await Mediator.Send(new Create.Command { OrderHistory = OrderHistory }));

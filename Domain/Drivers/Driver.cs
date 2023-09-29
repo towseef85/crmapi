@@ -17,5 +17,6 @@ namespace Domain.Drivers
         public string Status { get; set; }
         public string? TimeSlot { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
+        public ICollection<DriverPaymentHead> DriverPayments { get; set; }
     }
 }

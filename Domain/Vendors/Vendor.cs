@@ -20,6 +20,8 @@ namespace Domain.Vendors
         public string LeadSource { get; set; }
         public string PickupAddress { get; set; }
         public bool IsTrailDone { get; set;}
+        public string? CRNumber { get; set; }
+        public string? VATNumber { get; set; }
 
         public virtual ICollection<VendorPrice> VendorPrices { get; set; }
         public virtual ICollection<Order> Orders { get; set; }
