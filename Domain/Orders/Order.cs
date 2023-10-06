@@ -24,10 +24,12 @@ namespace Domain.Orders
         public virtual Driver Driver { get; set; }
         public virtual Price Price { get; set; }
         public float? OrderAmount { get; set; }
-        public  ICollection<OrderHistory> OrderHistory { get; set; }
+        public ICollection<OrderHistory> OrderHistory { get; set; }
         public string? Remarks { get; set; }
+        public string? CustomerName { get; set; }
+        public string? CustomerNumber { get; set; }
         public float? ExtraCharges { get; set; }
-        public bool IsPaid { get; set; }=false;
+        public bool IsPaid { get; set; } = false;
 
     }
 

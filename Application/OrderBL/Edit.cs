@@ -44,6 +44,7 @@ namespace Application.OrderBL
                         var res = _context.Orders.FirstOrDefault(x => x.Id == request.Order.Id);
                         if (res != null)
                         {
+                            request.Order.OrderNumber = res.OrderNumber;
                             _mapper.Map(request.Order, res);
                             var result = await _context.SaveChangesAsync(cancellationToken) > 0;
                             return new ServiceStatus<Unit>

@@ -26,7 +26,6 @@ namespace Infrastructure.Dtos.OrderDto
         public string? PickupLocation { get; set; }
         public int DeliveryType { get; set; }
         public float? CODCharges { get; set; }
-        public string? Remarks { get; set; }
         public float? ExtraCharges { get; set; }
         public DateTime DeliveryDate { get; set; }
         public GetDriverDto Driver { get; set; }
@@ -36,6 +35,9 @@ namespace Infrastructure.Dtos.OrderDto
         public ICollection<GetOrderStatusShortDto> Status { get; set; }
         public float? OrderAmount { get; set; }
         public bool IsPaid { get; set; } = false;
+        public string? CustomerName { get; set; }
+        public string? CustomerNumber { get; set; }
+        public string? Remarks { get; set; }
     }
 
 }

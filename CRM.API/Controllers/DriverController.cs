@@ -25,7 +25,13 @@ namespace CRM.API.Controllers
         {
             return HandleResult(await Mediator.Send(new DriverOrderList.Query { DriverId = DriverId }));
         }
-
+        [HttpGet("GetUnPaidOrder/{DriverId}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetDriverDto))]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public async Task<IActionResult> GetUnPaidOrder(Guid DriverId)
+        {
+            return HandleResult(await Mediator.Send(new UpPaidOrderList.Query { DriverId = DriverId }));
+        }
         [HttpGet("{Id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(GetDriverDto))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
