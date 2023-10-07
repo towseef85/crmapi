@@ -26,6 +26,8 @@ namespace Persistence.DataContexts
         public DbSet<OrderHistory> OrderHistories { get; set; }
         public DbSet<DriverPaymentHead> DriverPaymentHeads { get; set; }
         public DbSet<DriverPaymentDetails> DriverPaymentDetails { get; set; }
+        public DbSet<OrderRequest> OrderRequests { get; set; }
+
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
 
@@ -103,20 +105,7 @@ namespace Persistence.DataContexts
                 .WithMany(x => x.DriverPayments)
                 .HasForeignKey(x => x.DriverId);
 
-            //-----------
 
-
-
-            //modelBuilder.Entity<Order>()
-            //    .HasOne(x => x.Vendors)
-            //    .WithMany(x => x.Orders)
-            //    .HasForeignKey(x => x.VendorId);
-
-
-            //modelBuilder.Entity<Order>()
-            //  .HasOne(x => x.Drivers)
-            //  .WithMany(x => x.Orders)
-            //  .HasForeignKey(x => x.DriverId);
 
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<OrderStatus>().HasData(new OrderStatus { Id=Guid.NewGuid(), EngName="Created", ArbName="Created",IsActive=true });

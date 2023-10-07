@@ -30,6 +30,7 @@ namespace Domain.Orders
         public string? CustomerNumber { get; set; }
         public float? ExtraCharges { get; set; }
         public bool IsPaid { get; set; } = false;
+        public Guid? OrderRequestId { get; set; }
 
     }
 

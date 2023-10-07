@@ -26,6 +26,7 @@ namespace Infrastructure.Dtos.OrderDto
         public string? CustomerName { get; set; }
         public string? CustomerNumber { get; set; }
         public string? Remarks { get; set; }
+        public Guid? OrderRequestId { get; set; }
     }
 
 }

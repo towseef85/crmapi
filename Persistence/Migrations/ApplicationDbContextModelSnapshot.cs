@@ -162,6 +162,12 @@ namespace Persistence.Migrations
                     b.Property<DateTime?>("CreatedDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerNumber")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime?>("DeleteDate")
                         .HasColumnType("datetime2");
 
@@ -189,6 +195,9 @@ namespace Persistence.Migrations
                     b.Property<string>("OrderNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<Guid?>("OrderRequestId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("PickupLocation")
                         .HasColumnType("nvarchar(max)");
@@ -255,6 +264,61 @@ namespace Persistence.Migrations
                     b.ToTable("OrderHistories");
                 });
 
+            modelBuilder.Entity("Domain.Orders.OrderRequest", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<float?>("CODCharges")
+                        .HasColumnType("real");
+
+                    b.Property<DateTime?>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("CustomerName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CustomerNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("DeleteDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("Deleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime>("DeliveryDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("DeliveryType")
+                        .HasColumnType("int");
+
+                    b.Property<float?>("OrderAmount")
+                        .HasColumnType("real");
+
+                    b.Property<bool>("OrderDone")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PickupLocation")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Remarks")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<Guid>("VendorId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VendorId");
+
+                    b.ToTable("OrderRequests");
+                });
+
             modelBuilder.Entity("Domain.Orders.OrderStatus", b =>
                 {
                     b.Property<Guid>("Id")
@@ -293,7 +357,7 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("bd3be650-b445-4e70-8a4d-317271767c97"),
+                            Id = new Guid("0df43d3b-ec66-40a5-bbc3-80232b981506"),
                             ArbName = "Created",
                             Deleted = false,
                             EngName = "Created",
@@ -491,6 +555,17 @@ namespace Persistence.Migrations
                     b.Navigation("Order");
 
                     b.Navigation("OrderStatus");
+                });
+
+            modelBuilder.Entity("Domain.Orders.OrderRequest", b =>
+                {
+                    b.HasOne("Domain.Vendors.Vendor", "Vendor")
+                        .WithMany()
+                        .HasForeignKey("VendorId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Vendor");
                 });
 
             modelBuilder.Entity("Domain.Vendors.VendorPrice", b =>

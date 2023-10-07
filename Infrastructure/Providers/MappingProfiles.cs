@@ -7,6 +7,7 @@ using Infrastructure.Dtos.DriverDto;
 using Infrastructure.Dtos.DriverpaymentDto;
 using Infrastructure.Dtos.OrderDto;
 using Infrastructure.Dtos.OrderHistoryDto;
+using Infrastructure.Dtos.OrderRequestDto;
 using Infrastructure.Dtos.PriceDto;
 using Infrastructure.Dtos.VendorDto;
 using Infrastructure.Dtos.VendorPriceDto;
@@ -51,6 +52,8 @@ namespace Infrastructure.Providers
             CreateMap<PostDriverPaymentHeadDto, DriverPaymentHead>()
                 .ForMember(x=>x.DriverPaymentDetails, y=>y.MapFrom(x=>x.PaymentDetails));
             CreateMap<PostDriverPaymentDetailsDto, DriverPaymentDetails>();
+            CreateMap<PostOrderRequestDto, OrderRequest>();
+            CreateMap<OrderRequest, GetOrderRequestDto>();
 
          
         }

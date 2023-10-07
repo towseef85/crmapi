@@ -64,7 +64,16 @@ namespace Application.OrderBL
                             StatusUpdateDate = DateTime.Now.Date
                         };
                         _context.OrderHistories.Add(orderHistory);
+                        if(request.Order.OrderRequestId != null)
+                        {
+                            var getOrderRequest = await _context.OrderRequests.Where(x => x.Id == request.Order.OrderRequestId).FirstOrDefaultAsync();
+                            getOrderRequest.OrderDone = true;
+
+
+
+                        }
                         await _context.SaveChangesAsync(cancellationToken);
+
                     }
 
                     return new ServiceStatus<Unit>
