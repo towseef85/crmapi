@@ -68,6 +68,7 @@ namespace Application.OrderBL
                         {
                             var getOrderRequest = await _context.OrderRequests.Where(x => x.Id == request.Order.OrderRequestId).FirstOrDefaultAsync();
                             getOrderRequest.OrderDone = true;
+                            getOrderRequest.OrderNumber = request.Order.OrderNumber;
 
 
 

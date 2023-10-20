@@ -34,7 +34,7 @@ namespace CRM.API.Controllers
             return HandleResult(await Mediator.Send(new Create.Command { Vendor = vendor }));
         }
 
-        [HttpPut]
+        [HttpPut("{Id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(PostVendorDto))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> Update(PostVendorDto vendor)

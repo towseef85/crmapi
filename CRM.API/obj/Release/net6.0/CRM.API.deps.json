@@ -726,7 +726,8 @@
       },
       "Domain/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.21"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.21",
+          "System.IdentityModel.Tokens.Jwt": "6.10.0"
         },
         "runtime": {
           "Domain.dll": {}
@@ -735,7 +736,8 @@
       "Infrastructure/1.0.0": {
         "dependencies": {
           "AutoMapper.Extensions.Microsoft.DependencyInjection": "12.0.1",
-          "Domain": "1.0.0"
+          "Domain": "1.0.0",
+          "Microsoft.IdentityModel.Tokens": "6.10.0"
         },
         "runtime": {
           "Infrastructure.dll": {}

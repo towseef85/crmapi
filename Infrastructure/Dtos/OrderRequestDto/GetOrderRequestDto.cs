@@ -21,5 +21,6 @@ namespace Infrastructure.Dtos.OrderRequestDto
         public float? OrderAmount { get; set; }
         public virtual GetVendorShortDto Vendor { get; set; }
         public bool OrderDone { get; set; }
+        public string? OrderNumber { get; set; }
     }
 }

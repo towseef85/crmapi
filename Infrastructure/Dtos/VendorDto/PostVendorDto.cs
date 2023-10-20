@@ -21,6 +21,6 @@ namespace Infrastructure.Dtos.VendorDto
         public string? VATNumber { get; set; }
         public string LeadSource { get; set; }
         public string PickupAddress { get; set; }
-        public ICollection<PostVendorPriceDto> vendorPrice { get; set; }
+        public ICollection<PostVendorPriceDto>? vendorPrice { get; set; }
     }
 }

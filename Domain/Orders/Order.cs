@@ -20,6 +20,7 @@ namespace Domain.Orders
         public DeliveryType DeliveryType { get; set; }
         public float? CODCharges { get; set; }
         public DateTime DeliveryDate { get; set; }
+        public string? DeliveryTime { get; set; }
         public virtual Vendor Vendor { get; set; }
         public virtual Driver Driver { get; set; }
         public virtual Price Price { get; set; }

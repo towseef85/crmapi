@@ -8,10 +8,12 @@ using Domain.Vendors;
 using Domain.Prices;
 using Domain.Orders;
 using Microsoft.EntityFrameworkCore.Internal;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Domain.User;
 
 namespace Persistence.DataContexts
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<AppUsers>
     {
 
         private IDbContextTransaction _currentTransaction;

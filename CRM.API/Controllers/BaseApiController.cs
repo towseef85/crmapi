@@ -1,11 +1,13 @@
 ﻿using Infrastructure.Providers;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CRM.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class BaseApiController : ControllerBase
     {
         private IMediator? _mediator;

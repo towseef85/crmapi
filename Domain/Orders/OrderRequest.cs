@@ -21,5 +21,6 @@ namespace Domain.Orders
         public float? OrderAmount { get; set; }
         public virtual Vendor Vendor { get; set; }
         public bool OrderDone { get; set; } = false;
+        public string? OrderNumber { get; set; }
     }
 }

@@ -21,6 +21,7 @@ namespace Infrastructure.Dtos.OrderDto
         public int DeliveryType { get; set; }
         public float? CODCharges { get; set; } = 0;
         public DateTime DeliveryDate { get; set; }
+        public string? DeliveryTime { get; set; }
         public float? OrderAmount { get; set; }
         public bool IsPaid { get; set; } = false;
         public string? CustomerName { get; set; }

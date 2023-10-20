@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\CRM.API\\CRM.API.csproj": {}
+    "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\CRM.API\\CRM.API.csproj": {}
   },
   "projects": {
-    "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Application\\Application.csproj": {
+    "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\Towseef-PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Application\\obj\\",
+        "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\Towseef\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Application\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Towseef-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Towseef\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,20 +26,21 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Domain\\Domain.csproj"
+              "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Domain\\Domain.csproj"
               },
-              "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Infrastructure\\Infrastructure.csproj"
               },
-              "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Persistence\\Persistence.csproj": {
-                "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Persistence\\Persistence.csproj"
+              "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -69,7 +74,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -81,21 +87,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\CRM.API\\CRM.API.csproj": {
+    "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\CRM.API\\CRM.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\CRM.API\\CRM.API.csproj",
+        "projectUniqueName": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\CRM.API\\CRM.API.csproj",
         "projectName": "CRM.API",
-        "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\CRM.API\\CRM.API.csproj",
-        "packagesPath": "C:\\Users\\Towseef-PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\CRM.API\\obj\\",
+        "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\CRM.API\\CRM.API.csproj",
+        "packagesPath": "C:\\Users\\Towseef\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\CRM.API\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Towseef-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Towseef\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -103,20 +113,22 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.306\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Application\\Application.csproj": {
-                "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Application\\Application.csproj"
+              "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Application\\Application.csproj"
               },
-              "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Infrastructure\\Infrastructure.csproj": {
-                "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Infrastructure\\Infrastructure.csproj"
+              "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Infrastructure\\Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Infrastructure\\Infrastructure.csproj"
               },
-              "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Persistence\\Persistence.csproj": {
-                "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Persistence\\Persistence.csproj"
+              "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Persistence\\Persistence.csproj": {
+                "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Persistence\\Persistence.csproj"
               }
             }
           }
@@ -168,7 +180,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -180,21 +193,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Domain\\Domain.csproj": {
+    "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\Towseef-PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Towseef\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Towseef-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Towseef\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -202,6 +219,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -223,6 +241,10 @@
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.21, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[6.10.0, )"
             }
           },
           "imports": [
@@ -231,7 +253,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -240,21 +263,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Infrastructure\\Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Towseef-PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Infrastructure\\Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\Towseef\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Towseef-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Towseef\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -262,14 +289,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Domain\\Domain.csproj"
+              "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Domain\\Domain.csproj"
               }
             }
           }
@@ -287,6 +315,10 @@
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "Microsoft.IdentityModel.Tokens": {
+              "target": "Package",
+              "version": "[6.10.0, )"
             }
           },
           "imports": [
@@ -295,7 +327,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -304,21 +337,25 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Persistence\\Persistence.csproj": {
+    "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Persistence\\Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Persistence\\Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Persistence\\Persistence.csproj",
         "projectName": "Persistence",
-        "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Persistence\\Persistence.csproj",
-        "packagesPath": "C:\\Users\\Towseef-PC\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Persistence\\obj\\",
+        "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Persistence\\Persistence.csproj",
+        "packagesPath": "C:\\Users\\Towseef\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Persistence\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Towseef-PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Towseef\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -326,14 +363,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Domain\\Domain.csproj": {
-                "projectPath": "D:\\Projects_22-23\\Fazza_CRM\\crmapi\\Domain\\Domain.csproj"
+              "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Towseef\\Documents\\Testing\\CRM\\crmapi\\Domain\\Domain.csproj"
               }
             }
           }
@@ -373,7 +411,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -382,7 +421,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
         }
       }
     }

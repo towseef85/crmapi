@@ -28,6 +28,7 @@ namespace Infrastructure.Dtos.OrderDto
         public float? CODCharges { get; set; }
         public float? ExtraCharges { get; set; }
         public DateTime DeliveryDate { get; set; }
+        public string? DeliveryTime { get; set; }
         public GetDriverDto Driver { get; set; }
         public GetVendorShortDto Vendor { get; set; }
         public ICollection<GetOrderHistoryDto> OrderHistory { get; set; }
